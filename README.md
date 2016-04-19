@@ -17,4 +17,5 @@ Here are my coding standards:
 - Prefer ${VAR} to $VAR.
 - Always break up code into subroutines in long scripts.
 - Feed subshells with here documents for small amounts of data.
+- Use print and NOT echo.
 - Don't code for portability unless it is a requirement for the project.
