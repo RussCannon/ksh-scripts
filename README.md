@@ -6,7 +6,7 @@ This is a collection of scripts that I have written professionally that offer in
 They have been developed mostly under HP-UX though I also code on Linux.  Most of my work is in support of my role as an Oracle database administrator, and these scripts may relect that.  But, they employ methods that are easily generalizable.
 
 Here are my coding standards:
-- 
+- a
 - Use [[ ]] and (( )) instead of [ ] in conditionals.
 - Use (( )) for all math operations.
 - Never use 'let'.
