@@ -7,7 +7,7 @@ They have been developed mostly under HP-UX though I also code on Linux.  Most o
 
 Here are my coding standards:
 
-- Use [[ ]] and (( )) instead of \[ \] in conditionals.
+- Use [[ ]] and (( )) instead of [  ] in conditionals.
 - Use (( )) for all math operations.
 - Never use 'let'.
 - Use $( ) instead of ` ` for subshell calls.
