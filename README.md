@@ -10,7 +10,7 @@ Here are my coding standards:
 - Use [[ ]] and (( )) instead of [  ] in conditionals.
 - Use (( )) for all math operations.
 - Never use 'let'.
-- Use $( ) instead of ` ` for subshell calls.
+- Use $( ) instead of "` `" for subshell calls.
 - Always have a single exit point either at the bottom of a script or in an _exit routine.
 - Only use Posix functions where explicitly necessary.
 - Always use uppercase for variable names except for indexers.
