@@ -16,18 +16,18 @@
 #                                                                              #
 ################################################################################
 
-# Function: get_ly
+# Function: is_ly
 #
-# A one-liner that returns a 1 if the parameter is a leap yers and a 0 if not.
+# A one-liner that returns a 1 if the parameter is a leap year and a 0 if not.
 # First, take a modulo 100.
-#  If true, take a modulo of 400.
-#   If true, it IS a leap year so print 1.
+#  If zero, take a modulo of 400.
+#   If zero, it IS a leap year so print 1.
 #   Else, it IS NOT a leap year, so print 0.
-#  If modulo 100 is false, modulo by 4.
-#   If true, it IS a leap year.
+#  If modulo 100 is non-zero, modulo by 4.
+#   If zero, it IS a leap year.
 #   Else, it is NOT a leap year.
 
-function get_ly {
+function is_ly {
  (($1%100==0)) && {(($1%400==0)) && print 1 || print 0;} || {(($1%4==0)) && print 1 || print 0;}
 }
 
