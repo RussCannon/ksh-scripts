@@ -10,6 +10,7 @@ They have been developed mostly under HP-UX though I also code on Linux.  Most o
 Folders contain the following:
 
 - Functions - Scripts that are intended to be used as callable subroutines through the function path variable FPATH.  This folder contains scripts that are callable by scripts or from the command-line.  Each script has a file name that matches the function name within the script.  There is one function per script.
+- Snippits - Small programs and routines that demonstrate some capability of Korn Shell or describe solutions that I have found for various programming challenges I have faced.
 
 <b>Coding Standards and Style</b>
 
@@ -28,6 +29,7 @@ Here are my coding standards:
 - Feed subshells with here documents for small amounts of data.
 - Tab indent here documents.
 - Use 'print' and NOT 'echo'.
+- Use 'getopts' to process program and function arguments.
 - Design function scripts to contain one function each with the same file name as the function.
 - Don't code for portability unless it is a requirement for the project.
 
