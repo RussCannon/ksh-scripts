@@ -31,3 +31,11 @@ Here are my coding standards:
 - Don't code for portability unless it is a requirement for the project.
 
 Note:  This just explains my rules of coding and should not be construed as advocacy for a particular style.  This is just how I do things, and I try to be fairly consistent in so doing.  These preferences are driven by what I consider to be good programming methodology as well as implementing the best practices of the language in its most recent incarnation.
+
+<b>Korn Shell Repository</b>
+
+The Korn Shell source code can be obtained from the following GitHub repository:
+
+https://github.com/att/ast
+
+This was created by Lefteris Koutsofios following the takedown of the official AT&T Software Technology (AST) website by the company due to "security concerns".  There are no binaries, but the entire ast-open suite is provided and can be downloaded and built following the instructions provided.  Korn Shell is a component of the suite.  My practice is to perform a 'bin/package make' of the suite and then copy the results for my platform (in arch/\<architecture\> under PACKAGEROOT) to /opt/ast.  The shebangs in my scripts reflect this practice.
