@@ -1,7 +1,7 @@
 # ksh-scripts
 <b>A collection of Korn Shell scripts.</b>
 
-This is a collection of scripts that I have written professionally that offer instruction and insight into the use of Korn Shell as a programming language.  They are programs, fuctions, and routines written for Korn Shell 93 though many use the enhanced capabilities of the later versions of KSH.  Most of them will definitely not work with KSH88.  I typically use the most recent stable version of Korn Shell which, at this time is AJM 93u+ 2012-08-01.
+This is a collection of scripts that I have written professionally that offer instruction and insight into the use of Korn Shell as a programming language.  They are programs, fuctions, and routines written for Korn Shell 93 though many use the enhanced capabilities of the later versions of KSH.  Most of them will definitely not work with KSH88.  I typically use the most recent stable version of Korn Shell which is, at this time, AJM 93u+ 2012-08-01.
 
 They have been developed mostly under HP-UX though I also code on Linux.  Most of my work is in support of my role as an Oracle database administrator, and these scripts will tend reflect that.  But, they employ methods that are easily generalizable.
 
