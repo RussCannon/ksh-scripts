@@ -8,8 +8,8 @@
 # YYYYMMDD HHMISS Data...
 #
 # It is easy enough to capture the output of these programs into a variable,
-# but just printing the the variable contents to the log results in a single
-# long string--sometimes very log--on a single line of the log preceded by the
+# but just printing the variable contents to the log results in a single long
+# string--sometimes very log--on a single line of the log preceded by the
 # requisite date/time stamp.  This was unacceptable.
 #
 # Here is a simple trick to break that data up into their proper lines so that
