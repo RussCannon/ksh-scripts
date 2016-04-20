@@ -26,6 +26,7 @@ Here are my coding standards:
 - Prefer ${VAR} to $VAR.
 - Always break up code into subroutines in long scripts.
 - Feed subshells with here documents for small amounts of data.
+- Tab indent here documents.
 - Use 'print' and NOT 'echo'.
 - Design function scripts to contain one function each with the same file name as the function.
 - Don't code for portability unless it is a requirement for the project.
