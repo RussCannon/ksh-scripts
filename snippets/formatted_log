@@ -9,7 +9,7 @@
 #
 # It is easy enough to capture the output of these programs into a variable,
 # but just printing the variable contents to the log results in a single long
-# string--sometimes very log--on a single line of the log preceded by the
+# string--sometimes very long--on a single line of the log preceded by the
 # requisite date/time stamp.  This was unacceptable.
 #
 # Here is a simple trick to break that data up into their proper lines so that
@@ -43,7 +43,7 @@ DATA=$(
 	Here is a second line.  Ideally, we want this to have its own formatted
 	record in the log with the date/time preceding it.  Each line should be
 	recorded in the log in this way.  There should be no lines that are
-	separate in the input to just be concatenated on previous lines, but
+	separate in the input to just be concatenated onto previous lines, but
 	this is what happens when you just write the contents of the variable
 	to the log as in 'print \${VAR} >> <logfile>'.  Instead, you need a simple
 	trick to break them up properly and record them.
