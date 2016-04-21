@@ -22,6 +22,7 @@ Here are my coding standards:
 - Never use 'let'.
 - Use $( ) instead of backticks for subshell calls.
 - Always have a single exit point either at the bottom of a script or in an _exit routine.
+- For large programs, always exit with a return code.
 - Only use Posix functions where explicitly necessary.
 - Always use uppercase for variable names except for indexers.
 - Prefer ${VAR} to $VAR.
