@@ -1,0 +1,104 @@
+#!/usr/bin/env ksh
+
+# There are two ways to define functions in Korn Shell.  These are as follows:
+#
+# f() { ... }
+# function f { ... }
+#
+# I often see discussions on coding forums in which these two methods are said
+# to be interchangeable.  They are NOT!  The first form is the Posix function
+# declaration while the second is that of Korn Shell.  While both can be used
+# in Korn Shell, it is important to understand the differences.  They are NOT
+# simply two ways of doing the same thing.
+#
+# Posix functions lack local scope and isolation and can lead to subtle,
+# difficult to diagnose bugs.  Posix functions operate at the scope of the main
+# script, so there is no local scope, and the work performed is not isolated.
+# This may be what you want in particular circumstances, and I sometimes use
+# them.  But, it is important to remember that there is NO LOCAL SCOPE.
+#
+# Korn Shell functions operate in isolation from the main script so that they
+# DO have local scope.  This is the old "What happens in Vegas stays in Vegas"
+# concept.  While Korn Shell functions can operate on the script's global
+# state as well as on the external machine state, they also have and can use
+# a local state.  This local state is isolated from the global state and does
+# not bleed out.  Just remember that the global state is still visible to the
+# function and can be altered by it.  The local state, by which I mean the
+# locally declared variables and operations on them, IS isolated.  Now, it
+# would not be very useful to call a function that has no effect whatsover on
+# the global state or even the machine state.  What you usually want to do is
+# perform some local operation and then alter something in the global or
+# machine state.
+#
+# The following demonstrates this difference betwen Posix and Korn Shell
+# functions.
+
+integer X=1 Y=1
+
+f1() {
+ integer X=2  # New global X.
+ Y=2          # Original global Y.
+}
+
+function f2 {
+ integer X=2  # New LOCAL X.
+ Y=2          # Original global Y.
+}
+
+# Note that these are the EXACT SAME routines just declared differently.
+
+# Print the values of the global variables to start with.
+print "X=$X Y=$Y"
+# Outputs "X=1 Y=1"
+
+# Call the Posix function.
+f1
+print "X=$X Y=$Y"
+# Outputs "X=2 Y=2"
+
+# Restore the values of the global variables.
+X=1
+Y=1
+print "X=$X Y=$Y"
+# Outputs "X=1 Y=1"
+
+# We have restored the initial state.
+
+# Now, call the Korn Shell function.
+f2
+print "X=$X Y=$Y"
+# Outputs "X=1 Y=2"
+
+# While function f1 appears to declare X again locally, you will note that the
+# value of this X, which is "2", is global so that subsequent uses of X in
+# the main script will have the value set in f1.  This is NOT just a new value
+# for X, it is a WHOLE NEW X.  The typeset in f1 doesn't just set a new value
+# for the global X.  It replaces the global X variable with an entirely new
+# thing also called X.  The global X variable has been discarded and replaced
+# with a new global variable of the same name.  Y, however, is not replaced
+# with a new variable.  The value of the global Y variable is simply changed
+# by f1, and this is reflected in the global state.
+#
+# Function f2 works differently.  It also declares a new X, but this X does not
+# replace the global X because its scope is local by virtue of declaring
+# functions in this way.  The local X has no effect on the global X.  It is a
+# different thing that is invisible to the external state of the script.  Once
+# the local X is declared, there are now TWO things called X in the script--one
+# global and one local to f2.  Now, operations on X in f2 are local and do not
+# fall out to the global state.  Y, however, is not redeclared so that the
+# global variable is visible in the function and can be changed.  Altering Y
+# without redeclaring it just operates on the global variable, and this is
+# evident in the subsequent use of the variable in the main script.
+#
+# You can see from this demonstration that Posix functions could lead to subtle
+# bugs.  This is not a matter of one method being better than the other so much
+# as understanding the effects of each method on the overall process.  I would
+# say that it is usually preferable to use Korn Shell functions unless there is
+# a specific need for the Posix form.  I use the Korn Shell method almost
+# exclusively, but there have been rare instances in which I have used Posix
+# functions when complex coding scenarios called for it.  When so doing, I
+# always keep in mind the global effects they have.
+#
+# This file is part of my public domain github repository that can be found here:
+#
+# https://github.com/RussCannon/ksh-scripts
