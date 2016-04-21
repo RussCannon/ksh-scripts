@@ -1,0 +1,55 @@
+# DON'T RUN THIS!  It is just a coding tutorial.
+
+# This is a practical example of my technique of feeding STDIN to a program
+# using the here document feature.  In this example, I am launching Oracle's
+# database administration application sqlplus and then providing a series of
+# commands.  It logs on, starts the database, and then gets its status before
+# exiting.
+
+{
+ cat | sqlplus -S /nolog <<- !!!
+	conn /as sysdba
+	startup
+	set heading off
+	select status from v$instance;
+	exit
+	!!!
+} 0</dev/null
+
+# Note that I redirect STDIN from the NULL device for the whole block.  Programs
+# that request keyboard input from STDIN during operation will leave artifacts
+# in the input stream that cause the shell to exhibit erratic behavior after the
+# process has run.  Specifically, the shell is left with prompts for input in
+# the stream that must be cleared with one or more manual carriage returns.  By
+# redirecting STDIN from the NULL device, these are cleared automatically.  I
+# have used this technique in many scripts where I am performing basic
+# operations that just require a few commands fed to sqlplus or some other
+# program.  Instead of calling a separate SQL script that could be altered, I
+# just feed my commands in with the here document feature.
+#
+# The usual way of coding this would be to call sqlplus with the name of a
+# script to run like this:
+
+sqlplus -S /nolog @startdb
+
+# The contents of startdb.sql might be as follows:
+
+conn /as sysdba
+startup
+set heading off
+select status from v$instance;
+exit
+
+# This separate SQL script must be kept in configuration control as a separate
+# configuration item.  It could be altered later without the programmer being
+# aware of the consequence on other processes.  For example, a programmer
+# might take out the "set heading off" command without realizing that doing so
+# could have subtle, unexpected effects on other processes that use the script.
+# I have found that it is better to just feed in the commands I want to sqlplus
+# within the Korn Shell script without depending on a separate list of commands
+# that could be altered.  Of course, I do not do this with complex SQL scripts
+# that need to be run, but these separate scripts must be closely tied to the
+# KSH scripts that use them.  The configuration control system in use by the
+# large organization I work for does not do this, so it is necessary that
+# suitable comments be added to the files themselves to explicily name all of
+# the dependencies.

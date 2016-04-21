@@ -1,4 +1,4 @@
-#!/opt/ast/bin/ksh
+#!/usr/bin/env ksh
 
 # We had this situation in which we were needing to capture the output of
 # programs like sftp and sqlplus into a formatted log that had to have the date
