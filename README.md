@@ -31,7 +31,6 @@ Here are my coding standards:
 - Use 'print' and NOT 'echo'.
 - Use 'getopts' to process program and function arguments.
 - Use 'getopts' to create man pages for scripts.
-- Design function scripts to contain one function each with the same file name as the function.
 - Don't code for portability unless it is a requirement for the project.
 
 Note:  This just explains my rules of coding and should not be construed as advocacy for a particular style.  This is just how I do things, and I try to be fairly consistent in so doing.  These preferences are driven by what I consider to be good programming methodology as well as implementing the best practices of the language in its most recent incarnation.
