@@ -18,8 +18,7 @@ Here are my coding standards:
 
 - Use one space per level indentation.
 - Use [[ ]] and (( )) instead of [  ] in conditionals.
-- Use (( )) for all math operations.
-- Never use 'let'.
+- Use (( )) for all math operations instead of 'let'.
 - Use $( ) instead of backticks for subshell calls.
 - Always have a single exit point either at the bottom of a script or in an _exit routine.
 - For large programs, always exit with a return code.
