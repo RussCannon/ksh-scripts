@@ -53,3 +53,7 @@ exit
 # large organization I work for does not do this, so it is necessary that
 # suitable comments be added to the files themselves to explicily name all of
 # the dependencies.
+
+# This file is part of my public domain github repository that can be found here:
+#
+# https://github.com/RussCannon/ksh-scripts

@@ -19,19 +19,23 @@
 # Function: is_ly
 #
 # A one-liner that returns a 1 if the parameter is a leap year and a 0 if not.
-# First, take a modulo 100.
-#  If zero, take a modulo of 400.
-#   If zero, it IS a leap year so print 1.
+# First, modulo the parameter with 100.
+#  If zero, modulo with 400.
+#   If zero, it IS a leap year, so print 1.
 #   Else, it IS NOT a leap year, so print 0.
-#  If modulo 100 is non-zero, modulo by 4.
-#   If zero, it IS a leap year.
-#   Else, it is NOT a leap year.
+#  If modulo 100 is non-zero, modulo with 4.
+#   If zero, it IS a leap year.  Print 1.
+#   Else, it is NOT a leap year.  Print 0.
 
 function is_ly {
  (($1%100==0)) && {(($1%400==0)) && print 1 || print 0;} || {(($1%4==0)) && print 1 || print 0;}
 }
 
 # Note:  This was originally done with a slightly longer function that used
-# proper if/then/else constructs which would have been more readable, but once
-# I had that algorithm down, I instinctively knew that it could be done with a
-# one-liner.  The syntax was fiddly, but it worked.
+# proper if/then/else constructs which as more readable, but once I had that
+# algorithm down, I instinctively knew that it could be done with a one-liner.
+# The syntax was fiddly, but it worked out.
+
+# This file is part of my public domain github repository that can be found here:
+#
+# https://github.com/RussCannon/ksh-scripts

@@ -69,3 +69,7 @@ cat ${LOG}
 # Cleanup our log for this test.
 
 rm ${LOG}
+
+# This file is part of my public domain github repository that can be found here:
+#
+# https://github.com/RussCannon/ksh-scripts
