@@ -27,7 +27,7 @@ Here are my coding standards:
 - Prefer ${VAR} to $VAR.
 - Always break up code into subroutines in long scripts.
 - Feed subshells with here documents for small amounts of data.
-- Tab indent here documents.
+- Tab-indent here documents.
 - Use 'print' and NOT 'echo'.
 - Use 'getopts' to process program and function arguments.
 - Use 'getopts' to create man pages for scripts.
