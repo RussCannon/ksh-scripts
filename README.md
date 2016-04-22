@@ -28,7 +28,7 @@ Here are my coding standards:
 - Always break up code into subroutines in long scripts.
 - Feed subshells with here documents for small amounts of data.
 - Tab-indent here documents.
-- Use 'print' and NOT 'echo'.
+- Use 'print' or 'printf' and NOT 'echo'.
 - Use 'getopts' to process program and function arguments.
 - Use 'getopts' to create man pages for scripts.
 - Don't code for portability unless it is a requirement for the project.
