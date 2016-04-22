@@ -31,3 +31,7 @@ function is_ly {
  (($1%100==0)) && {(($1%400==0)) && print 1 || print 0;} || {(($1%4==0)) && print 1 || print 0;}
 }
 
+# Note:  This was originally done with a slightly longer function that used
+# proper if/then/else constructs which would have been more readable, but once
+# I had that algorithm down, I instinctively knew that it could be done with a
+# one-liner.  The syntax was fiddly, but it worked.
