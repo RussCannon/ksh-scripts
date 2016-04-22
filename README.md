@@ -30,6 +30,7 @@ Here are my coding standards:
 - Tab indent here documents.
 - Use 'print' and NOT 'echo'.
 - Use 'getopts' to process program and function arguments.
+- Use 'getopts' to create man pages for scripts.
 - Design function scripts to contain one function each with the same file name as the function.
 - Don't code for portability unless it is a requirement for the project.
 
